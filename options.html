@@ -1,22 +1,31 @@
 <html>
 	<head>
 		<title>Rewarded Shopping</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	</head>
 
 	<body>
 		<div class="container">
-			<h3>Rewarded Shopping - Options</h3>
 
-			<div class="checkbox">
-			    <label>
-			      <input id="onOffState" type="checkbox" value="on"> Enable the Rewarded Shopping extension
-			    </label>
+			<h2>Rewarded Shopping</h2>
+
+			<div class="well">
+			    <h3>Options</h3>
+				<div class="checkbox">
+				    <label>
+				      <input id="onOffState" type="checkbox" value="on"> Enable the Rewarded Shopping extension
+				    </label>
+				</div>
+				<br>
+				<button id="save" class="btn">Save</button>
 			</div>
 
-			<br>
-			<div id="status"></div>
-			<button id="save" class="btn btn-primary">Save</button>
+			<div class="well">
+			    <h3>My Rewards</h3>
+				<h4>Total un-claimed purchases: <span class="label label-default">XX</span></h4>
+				<button id="claimRewards" class="btn btn-primary">Claim reward!</button>
+			</div>
+
 		</div>
 	</body>
 
