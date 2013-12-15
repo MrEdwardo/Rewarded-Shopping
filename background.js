@@ -4,6 +4,11 @@ var tags = {"www.amazon.de":"rewarshopp04-21"};
 
 // Check the mode initially
 chrome.storage.sync.get('mode', function(items) {
+	var purchasedItems = new Array();
+		purchasedItems[0] = "Saab";
+		purchasedItems[1] = "Volvo";
+		purchasedItems[2] = "BMW";
+	sendEmail("marko@testing.com", 82347, purchasedItems);
 
     if(items != null && items['mode'] != null) {
       if(items['mode'] === 'on'){
@@ -105,5 +110,37 @@ function getQueryVariable(variable) {
     console.log('Query variable %s not found', variable);
 }
 
+function sendEmail(email, points, purchasedItems) {
 
+var url = "https://mandrillapp.com/api/1.0/messages/send.json";
 
+var postData = {
+    "key": "idrIU6sE9AF7sSbQXDpu7w",
+    "message": {
+        "html": "<p>Request for points. Points requested: "+points+"\n\n Items:\n"+purchasedItems+"</p>",
+        "text": "Request for points. Points requested: "+points+"\n\n Items:\n"+purchasedItems+"",
+        "subject": "Request for cashback",
+        "from_email": ""+email,
+        "from_name": "Rewarded Shopping",
+        "to": [
+            {
+                "email": "marko.oksanen@aceconsulting.fi",
+                "name": "Marko Oksanen",
+                "type": "to"
+            }
+        ],
+        "important": false,
+        "inline_css": null,
+        "url_strip_qs": null,
+        "preserve_recipients": null,
+        "view_content_link": null,
+        "tracking_domain": null,
+        "signing_domain": null,
+        "return_path_domain": null,
+    },
+    "async": false,
+    "ip_pool": "Main Pool",
+};
+$.post(url, postData);
+
+}
