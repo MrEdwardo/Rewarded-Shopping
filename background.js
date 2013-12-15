@@ -1,4 +1,4 @@
-var mode = "off";
+var mode = "on";
 var affiliateId = "rewarshopp04-21";
 var tags = {"www.amazon.de":"rewarshopp04-21"};
 

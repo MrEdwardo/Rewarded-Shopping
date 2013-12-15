@@ -6,7 +6,6 @@
 
 	<body>
 		<div class="container">
-
 			<h2>Rewarded Shopping</h2>
 
 			<div class="well">
@@ -22,10 +21,15 @@
 
 			<div class="well">
 			    <h3>My Rewards</h3>
-				<h4>Total un-claimed purchases: <span class="label label-default">XX</span></h4>
+				<h4>Total un-claimed purchases: <span id="purchasesValue" class="label label-default">XX</span></h4>
 				<button id="claimRewards" class="btn btn-primary">Claim reward!</button>
 			</div>
 
+			<div class="well">
+			    <h3>Debug</h3>
+				<h4>Add a transaction <span id="purchasesValue" class="label label-default"></span></h4>
+				<label><input type="text" id="transactionTxt"/></label>&nbsp;<button id="addTransaction" class="btn btn-small">Add</button>
+			</div>
 		</div>
 	</body>
 

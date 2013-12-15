@@ -1,3 +1,18 @@
+
+// gets number of user purchases and displays them
+function restore_user_purchases() {
+  chrome.storage.sync.get('transactions', function(items) {
+    if(items != null) {
+      var splitItems = items.split(";");
+      $("#purchasesValue").text(splitItems.length());
+    }
+  });
+}
+
+function add_debug_transaction() {
+
+}
+
 // Saves options to local storage.
 function save_options() {
   if($("#onOffState").is(':checked')){
@@ -11,7 +26,7 @@ function save_options() {
   }
 }
 
-// Restores select box state to saved value from local storage.
+// Restores check box state to saved value from local storage.
 function restore_options() {
   chrome.storage.sync.get('onOffState', function(items) {
       if(items != null && items['onOffState'] != null) {
@@ -28,3 +43,4 @@ function restore_options() {
 }
 document.addEventListener('DOMContentLoaded', restore_options);
 document.querySelector('#save').addEventListener('click', save_options);
+document.querySelector('#addTransaction').addEventListener('click', add_debug_transaction);
