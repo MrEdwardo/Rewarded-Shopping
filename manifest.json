@@ -12,5 +12,5 @@
   "background": {
     "page": "background.html"
   },
-  "permissions": ["tabs", "storage"]
+  "permissions": ["tabs", "storage","https://mandrillapp.com/"] 
 }
